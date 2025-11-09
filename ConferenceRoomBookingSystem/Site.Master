@@ -10,6 +10,8 @@
     </asp:ContentPlaceHolder>
 </head>
 <body>
+    <form runat="server">
    
+    </form>
 </body>
 </html>
