@@ -4,5 +4,6 @@
 
 
 <asp:Content ID="BodyContent" ContentPlaceHolderID="MainContent" runat="server">
-    
+    <div class="search-rooms-container">
+    </div>
 </asp:Content>
