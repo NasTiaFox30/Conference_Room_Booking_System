@@ -14,5 +14,9 @@ namespace ConferenceRoomBookingSystem.Models
         public string Attendees { get; set; }
         public string Status { get; set; }
         public DateTime CreatedDate { get; set; }
+
+        // Navigation properties:
+        public string RoomName { get; set; }
+        public string UserName { get; set; }
     }
 }
