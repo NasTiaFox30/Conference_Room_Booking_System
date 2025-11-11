@@ -11,5 +11,23 @@ namespace ConferenceRoomBookingSystem.Pages
         {
         }
 
+        private void LoadBookingDetails(int bookingId)
+        {
+            var bookingRepo = new BookingRepository();
+            var booking = bookingRepo.GetBookingById(bookingId);
+
+            if (booking == null)
+            {
+                Response.Redirect("~/Pages/MyBookings.aspx");
+                return;
+            }
+
+            fvBookingDetails.DataSource = new[] { booking };
+            fvBookingDetails.DataBind();
+
+            // Only for future bookings:
+            btnCancel.Visible = booking.Status == "Confirmed" &&
+                              booking.StartTime > DateTime.Now.AddHours(24);
+        }
     }
 }
