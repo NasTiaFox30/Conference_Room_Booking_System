@@ -70,6 +70,14 @@ namespace ConferenceRoomBookingSystem.Pages
                 };
 
                 var bookingRepo = new BookingRepository();
+
+                // Check conflict validation
+                if (!bookingRepo.IsRoomAvailable(roomId, booking.StartTime, booking.EndTime))
+                {
+                    ShowError("Sala jest już zarezerwowana na wybrany czas. Proszę wybrać inny termin.");
+                    return;
+                }
+
                 // Save reservation
                 if (bookingRepo.CreateBooking(booking))
                 {
