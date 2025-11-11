@@ -41,6 +41,26 @@ namespace ConferenceRoomBookingSystem.Pages
             var allRooms = roomRepo.GetAllRooms();
             var availableRooms = new List<ConferenceRoom>();
 
+            foreach (var room in allRooms)
+            {
+                // Filtration by capacity
+                if (!string.IsNullOrEmpty(txtCapacity.Text) &&
+                    int.TryParse(txtCapacity.Text, out int minCapacity) &&
+                    room.Capacity < minCapacity)
+                    continue;
+
+                // Filtration by equipment
+                if (chkProjector.Checked && !room.HasProjector) continue;
+                if (chkWhiteboard.Checked && !room.HasWhiteboard) continue;
+                if (chkAudio.Checked && !room.HasAudioSystem) continue;
+                if (chkWifi.Checked && !room.HasWiFi) continue;
+
+                // Checking available
+                if (!bookingRepo.IsRoomAvailable(room.RoomId, startDateTime, endDateTime))
+                    continue;
+
+                availableRooms.Add(room);
+            }
         }
 
         public string GetEquipmentText(object hasProjector, object hasWhiteboard, object hasAudioSystem, object hasWiFi)
