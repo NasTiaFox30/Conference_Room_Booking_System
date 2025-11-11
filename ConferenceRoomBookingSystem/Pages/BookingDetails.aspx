@@ -7,5 +7,7 @@
 </asp:Content>
 
 <asp:Content ID="BodyContent" ContentPlaceHolderID="MainContent" runat="server">
+    <div class="booking-details-container">
     
+    </div>
 </asp:Content>
