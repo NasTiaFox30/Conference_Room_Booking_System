@@ -11,5 +11,12 @@ namespace ConferenceRoomBookingSystem.Data
         private readonly DatabaseHelper dbHelper;
         public ConferenceRoomRepository() => dbHelper = new DatabaseHelper();
 
+        public List<ConferenceRoom> GetAllRooms()
+        {
+            var rooms = new List<ConferenceRoom>();
+            
+            return rooms;
+        }
+
     }
 }
