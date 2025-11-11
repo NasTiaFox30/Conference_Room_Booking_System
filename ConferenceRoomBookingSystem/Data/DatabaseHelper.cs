@@ -36,5 +36,22 @@ namespace ConferenceRoomBookingSystem.Data
             return new SqlConnection(connectionString);
         }
 
+        public DataTable ExecuteQuery(string query, SqlParameter[] parameters = null)
+        {
+            using (var connection = GetConnection())
+            using (var command = new SqlCommand(query, connection))
+            {
+                if (parameters != null)
+                    command.Parameters.AddRange(parameters);
+
+                var dataTable = new DataTable();
+                var adapter = new SqlDataAdapter(command);
+
+                connection.Open();
+                adapter.Fill(dataTable);
+                return dataTable;
+            }
+        }
+
     }
 }
