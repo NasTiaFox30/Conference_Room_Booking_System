@@ -70,6 +70,16 @@ namespace ConferenceRoomBookingSystem.Pages
                 };
 
                 var bookingRepo = new BookingRepository();
+                // Save reservation
+                if (bookingRepo.CreateBooking(booking))
+                {
+                    ShowSuccess("Sala została pomyślnie zarezerwowana!");
+                    // FUTURE TO-DO: Można dodać wysyłkę e-maila
+                }
+                else
+                {
+                    ShowError("Wystąpił błąd podczas rezerwacji. Spróbuj ponownie.");
+                }
             }
             catch (Exception ex)
             {
