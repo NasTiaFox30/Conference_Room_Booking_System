@@ -15,5 +15,18 @@ namespace ConferenceRoomBookingSystem.Pages
         {
         }
 
+        private void LoadRoomDetails()
+        {
+            var roomRepo = new ConferenceRoomRepository();
+            room = roomRepo.GetRoomById(roomId);
+            if (room == null)
+            {
+                //ShowError("Sala nie została znaleziona.");
+                return;
+            }
+            fvRoomDetails.DataSource = new[] { room };
+            fvRoomDetails.DataBind();
+        }
+
     }
 }
