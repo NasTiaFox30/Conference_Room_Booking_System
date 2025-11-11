@@ -68,6 +68,8 @@ namespace ConferenceRoomBookingSystem.Pages
                     Status = "Confirmed",
                     CreatedDate = DateTime.Now
                 };
+
+                var bookingRepo = new BookingRepository();
             }
             catch (Exception ex)
             {
