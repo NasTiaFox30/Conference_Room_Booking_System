@@ -11,7 +11,7 @@
         <div class="booking-details-header">
             <h2 class="booking-details-title">Szczegóły rezerwacji</h2>
         </div>
-    
+        
         <asp:FormView ID="fvBookingDetails" runat="server">
             <ItemTemplate>
                 <div class="booking-details-card">
