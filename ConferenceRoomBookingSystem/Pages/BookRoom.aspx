@@ -12,6 +12,15 @@
             <h2 class="bookroom-title">Rezerwacja sali konferencyjnej</h2>
         </div>
     
+        <div class="bookroom-content">
+            <!-- Szczegóły sali -->
+            <div>
+                <asp:FormView ID="fvRoomDetails" runat="server">
+                   
+                </asp:FormView>
+            </div>
+        </div>
+       
         <asp:Label ID="lblMessage" runat="server" CssClass="alert" Visible="false"></asp:Label>
     </div>
 </asp:Content>
