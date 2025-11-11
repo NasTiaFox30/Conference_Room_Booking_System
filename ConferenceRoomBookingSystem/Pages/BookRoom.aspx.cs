@@ -46,5 +46,23 @@ namespace ConferenceRoomBookingSystem.Pages
                 txtBookingEnd.Text = "10:00";
         }
 
+        private void ShowError(string message)
+        {
+            lblMessage.Text = message;
+            lblMessage.CssClass = "alert alert-danger";
+            lblMessage.Visible = true;
+        }
+
+        private void ShowSuccess(string message)
+        {
+            lblMessage.Text = message;
+            lblMessage.CssClass = "alert alert-success";
+            lblMessage.Visible = true;
+            // Clean Form
+            txtTitle.Text = "";
+            txtDescription.Text = "";
+            txtAttendees.Text = "";
+        }
+
     }
 }
