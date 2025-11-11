@@ -84,7 +84,12 @@ namespace ConferenceRoomBookingSystem.Data
             }
         }
 
+        public List<Booking> GetUserBookings(int userId, string filter = "Upcoming")
+        {
+            var bookings = new List<Booking>();
 
+            return bookings;
+        }
 
         public Booking GetBookingById(int bookingId)
         {
