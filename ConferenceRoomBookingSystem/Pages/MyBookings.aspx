@@ -20,5 +20,11 @@
                 <asp:ListItem Text="Wszystkie" Value="All" />
             </asp:DropDownList>
         </div>
+
+        <asp:GridView ID="gvMyBookings" runat="server" AutoGenerateColumns="false" 
+            CssClass="bookings-table" OnRowCommand="gvMyBookings_RowCommand"
+            EmptyDataText="Nie masz rezerwacji.">
+            
+        </asp:GridView>
     </div>
 </asp:Content>
