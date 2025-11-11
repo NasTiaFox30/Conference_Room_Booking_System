@@ -29,6 +29,12 @@ namespace ConferenceRoomBookingSystem.Pages
             btnCancel.Visible = booking.Status == "Confirmed" &&
                               booking.StartTime > DateTime.Now.AddHours(24);
         }
+
+        protected void btnBack_Click(object sender, EventArgs e)
+        {
+            Response.Redirect("~/Pages/MyBookings.aspx");
+        }
+
         protected void btnCancel_Click(object sender, EventArgs e)
         {
             if (!int.TryParse(Request.QueryString["bookingId"], out int bookingId))
