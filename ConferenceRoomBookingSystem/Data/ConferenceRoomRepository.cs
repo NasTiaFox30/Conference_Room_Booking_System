@@ -9,5 +9,7 @@ namespace ConferenceRoomBookingSystem.Data
     public class ConferenceRoomRepository
     {
         private readonly DatabaseHelper dbHelper;
+        public ConferenceRoomRepository() => dbHelper = new DatabaseHelper();
+
     }
 }
