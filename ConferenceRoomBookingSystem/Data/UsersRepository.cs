@@ -34,5 +34,25 @@ namespace ConferenceRoomBookingSystem.Data
             };
         }
 
+        public bool CreateUser(User user, string plainPassword)
+        {
+            var query = @"
+                INSERT INTO Users (Username, Email, FirstName, LastName, Department, PasswordHash, IsAdmin, IsActive)
+                VALUES (@Username, @Email, @FirstName, @LastName, @Department, @PasswordHash, @IsAdmin, @IsActive)";
+
+            var parameters = new SqlParameter[]
+            {
+                new SqlParameter("@Username", user.Username),
+                new SqlParameter("@Email", user.Email),
+                new SqlParameter("@FirstName", user.FirstName),
+                new SqlParameter("@LastName", user.LastName),
+                new SqlParameter("@Department", (object)user.Department ?? DBNull.Value),
+                new SqlParameter("@PasswordHash", BCrypt.Net.BCrypt.HashPassword(plainPassword)),
+                new SqlParameter("@IsAdmin", user.IsAdmin),
+                new SqlParameter("@IsActive", user.IsActive)
+            };
+
+            return dbHelper.ExecuteNonQuery(query, parameters) > 0;
+        }
     }
 }
