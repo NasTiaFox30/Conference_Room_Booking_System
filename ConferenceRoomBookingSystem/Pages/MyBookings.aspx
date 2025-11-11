@@ -24,7 +24,28 @@
         <asp:GridView ID="gvMyBookings" runat="server" AutoGenerateColumns="false" 
             CssClass="bookings-table" OnRowCommand="gvMyBookings_RowCommand"
             EmptyDataText="Nie masz rezerwacji.">
-            
+            <Columns>
+                <asp:BoundField DataField="RoomName" HeaderText="Sala" />
+                <asp:BoundField DataField="Title" HeaderText="Tytuł wydarzenia" />
+                <asp:BoundField DataField="StartTime" HeaderText="Początek" DataFormatString="{0:dd.MM.yyyy HH:mm}" />
+                <asp:BoundField DataField="EndTime" HeaderText="Koniec" DataFormatString="{0:dd.MM.yyyy HH:mm}" />
+                <asp:BoundField DataField="Status" HeaderText="Status" />
+                <asp:TemplateField HeaderText="Akcje">
+                    <ItemTemplate>
+                        <div class="action-buttons">
+                            <asp:Button ID="btnCancel" runat="server" Text="Anuluj" 
+                                CommandName="CancelBooking" 
+                                CommandArgument='<%# Eval("BookingId") %>'
+                                CssClass="btn btn-warning btn-sm" 
+                                Visible='<%# CanCancelBooking(Eval("Status"), Eval("StartTime")) %>' />
+                            <asp:Button ID="btnDetails" runat="server" Text="Szczegóły" 
+                                CommandName="ViewDetails" 
+                                CommandArgument='<%# Eval("BookingId") %>'
+                                CssClass="btn btn-info btn-sm" />
+                        </div>
+                    </ItemTemplate>
+                </asp:TemplateField>
+            </Columns>
         </asp:GridView>
     </div>
 </asp:Content>
