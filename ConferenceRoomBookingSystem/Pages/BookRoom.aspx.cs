@@ -64,5 +64,12 @@ namespace ConferenceRoomBookingSystem.Pages
             txtAttendees.Text = "";
         }
 
+        private int GetCurrentUserId()
+        {
+            if (Session["UserId"] == null)
+                Response.Redirect("~/Pages/Login.aspx");
+            return (int)Session["UserId"];
+        }
+
     }
 }
