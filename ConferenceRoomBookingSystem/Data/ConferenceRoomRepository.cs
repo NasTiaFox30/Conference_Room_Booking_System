@@ -14,6 +14,8 @@ namespace ConferenceRoomBookingSystem.Data
         public List<ConferenceRoom> GetAllRooms()
         {
             var rooms = new List<ConferenceRoom>();
+            var query = @"SELECT * FROM ConferenceRooms WHERE IsActive = 1 ORDER BY RoomName";
+            var dataTable = dbHelper.ExecuteQuery(query);
             
             return rooms;
         }
