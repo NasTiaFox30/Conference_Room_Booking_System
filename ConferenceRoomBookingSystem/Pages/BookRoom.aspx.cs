@@ -53,6 +53,14 @@ namespace ConferenceRoomBookingSystem.Pages
                 ShowError("Nieprawidłowy identyfikator sali.");
                 return;
             }
+
+            try
+            {
+            }
+            catch (Exception ex)
+            {
+                ShowError($"Błąd: {ex.Message}");
+            }
         }
 
         protected void btnCancel_Click(object sender, EventArgs e)
