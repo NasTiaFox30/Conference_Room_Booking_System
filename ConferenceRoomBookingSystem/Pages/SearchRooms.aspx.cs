@@ -20,6 +20,10 @@ namespace ConferenceRoomBookingSystem.Pages
             }
         }
 
+        protected void btnSearch_Click(object sender, EventArgs e)
+        {
+            SearchAvailableRooms();
+        }
 
         private void SearchAvailableRooms()
         {
