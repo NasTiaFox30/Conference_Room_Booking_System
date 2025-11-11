@@ -54,5 +54,28 @@ namespace ConferenceRoomBookingSystem.Data
 
             return dbHelper.ExecuteNonQuery(query, parameters) > 0;
         }
+
+        public User GetUserById(int userId)
+        {
+            var query = "SELECT * FROM Users WHERE UserId = @UserId";
+            var parameters = new SqlParameter[] { new SqlParameter("@UserId", userId) };
+            var dt = dbHelper.ExecuteQuery(query, parameters);
+
+            if (dt.Rows.Count == 0) return null;
+
+            var row = dt.Rows[0];
+            return new User
+            {
+                UserId = Convert.ToInt32(row["UserId"]),
+                Username = row["Username"].ToString(),
+                Email = row["Email"].ToString(),
+                FirstName = row["FirstName"].ToString(),
+                LastName = row["LastName"].ToString(),
+                Department = row["Department"]?.ToString(),
+                PasswordHash = row["PasswordHash"]?.ToString(),
+                IsAdmin = Convert.ToBoolean(row["IsAdmin"]),
+                IsActive = Convert.ToBoolean(row["IsActive"])
+            };
+        }
     }
 }
