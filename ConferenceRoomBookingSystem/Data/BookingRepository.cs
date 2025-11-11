@@ -84,5 +84,12 @@ namespace ConferenceRoomBookingSystem.Data
             }
         }
 
+
+        public bool CancelBooking(int bookingId)
+        {
+            var query = "UPDATE Bookings SET Status = 'Cancelled' WHERE BookingId = @BookingId";
+            var parameters = new SqlParameter[] { new SqlParameter("@BookingId", bookingId) };
+            return dbHelper.ExecuteNonQuery(query, parameters) > 0;
+        }
     }
 }
