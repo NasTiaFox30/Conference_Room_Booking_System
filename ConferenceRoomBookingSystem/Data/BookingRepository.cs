@@ -101,6 +101,31 @@ namespace ConferenceRoomBookingSystem.Data
 
             query += " ORDER BY b.StartTime DESC";
 
+            var parameters = new SqlParameter[]
+            {
+                new SqlParameter("@UserId", userId),
+                new SqlParameter("@CurrentTime", DateTime.Now)
+            };
+
+            var dataTable = dbHelper.ExecuteQuery(query, parameters);
+            foreach (DataRow row in dataTable.Rows)
+            {
+                bookings.Add(new Booking
+                {
+                    BookingId = Convert.ToInt32(row["BookingId"]),
+                    RoomId = Convert.ToInt32(row["RoomId"]),
+                    UserId = Convert.ToInt32(row["UserId"]),
+                    Title = row["Title"].ToString(),
+                    Description = row["Description"]?.ToString(),
+                    StartTime = Convert.ToDateTime(row["StartTime"]),
+                    EndTime = Convert.ToDateTime(row["EndTime"]),
+                    Attendees = row["Attendees"]?.ToString(),
+                    Status = row["Status"].ToString(),
+                    CreatedDate = Convert.ToDateTime(row["CreatedDate"]),
+                    RoomName = row["RoomName"].ToString(),
+                    UserName = row["UserName"].ToString()
+                });
+            }
             return bookings;
         }
 
