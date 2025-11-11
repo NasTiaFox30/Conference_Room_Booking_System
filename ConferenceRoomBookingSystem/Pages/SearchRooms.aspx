@@ -12,5 +12,10 @@
             <h2 class="search-rooms-title">Wyszukiwanie sal konferencyjnych</h2>
         </div>
         
+        <div class="search-form">
+            
+        </div>
+
+        
     </div>
 </asp:Content>
