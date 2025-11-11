@@ -35,7 +35,7 @@ namespace ConferenceRoomBookingSystem.Pages
 
             if (!TimeSpan.TryParse(txtEndTime.Text, out TimeSpan endTime))
                 endTime = new TimeSpan(10, 0, 0);
-           
+
             var startDateTime = searchDate.Add(startTime);
             var endDateTime = searchDate.Add(endTime);
 
