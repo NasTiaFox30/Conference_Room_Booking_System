@@ -13,6 +13,16 @@ namespace ConferenceRoomBookingSystem.Pages
 
         protected void Page_Load(object sender, EventArgs e)
         {
+            if (!IsPostBack)
+            {
+                if (!int.TryParse(Request.QueryString["roomId"], out roomId))
+                {
+                    ShowError("Nieprawidłowy identyfikator sali.");
+                    return;
+                }
+                LoadRoomDetails();
+                PrefillBookingTimes();
+            }
         }
 
         private void LoadRoomDetails()
