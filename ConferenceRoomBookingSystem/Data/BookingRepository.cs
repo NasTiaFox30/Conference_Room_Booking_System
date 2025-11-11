@@ -40,6 +40,16 @@ namespace ConferenceRoomBookingSystem.Data
                 {
                     try
                     {
+                        // Checking availabel
+                        var checkCmd = new SqlCommand(@"
+                            SELECT COUNT(*) FROM Bookings 
+                            WHERE RoomId = @RoomId 
+                              AND Status != 'Cancelled'
+                              AND (StartTime < @EndTime AND EndTime > @StartTime)", connection, transaction);
+                        checkCmd.Parameters.AddWithValue("@RoomId", booking.RoomId);
+                        checkCmd.Parameters.AddWithValue("@StartTime", booking.StartTime);
+                        checkCmd.Parameters.AddWithValue("@EndTime", booking.EndTime);
+
                         return true;
                     }
                     catch
