@@ -87,6 +87,12 @@ namespace ConferenceRoomBookingSystem.Data
         public List<Booking> GetUserBookings(int userId, string filter = "Upcoming")
         {
             var bookings = new List<Booking>();
+            string query = @"
+                SELECT b.*, r.RoomName, u.FirstName + ' ' + u.LastName AS UserName
+                FROM Bookings b
+                INNER JOIN ConferenceRooms r ON b.RoomId = r.RoomId
+                INNER JOIN Users u ON b.UserId = u.UserId
+                WHERE b.UserId = @UserId";
 
             return bookings;
         }
