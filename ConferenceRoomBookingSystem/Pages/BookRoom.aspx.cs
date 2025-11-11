@@ -28,5 +28,23 @@ namespace ConferenceRoomBookingSystem.Pages
             fvRoomDetails.DataBind();
         }
 
+        private void PrefillBookingTimes()
+        {
+            if (!string.IsNullOrEmpty(Request.QueryString["date"]))
+                txtBookingDate.Text = Request.QueryString["date"];
+            else
+                txtBookingDate.Text = DateTime.Now.ToString("yyyy-MM-dd");
+
+            if (!string.IsNullOrEmpty(Request.QueryString["start"]))
+                txtBookingStart.Text = Request.QueryString["start"];
+            else
+                txtBookingStart.Text = "09:00";
+
+            if (!string.IsNullOrEmpty(Request.QueryString["end"]))
+                txtBookingEnd.Text = Request.QueryString["end"];
+            else
+                txtBookingEnd.Text = "10:00";
+        }
+
     }
 }
