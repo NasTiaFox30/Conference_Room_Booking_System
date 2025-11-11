@@ -60,7 +60,21 @@
                 <asp:BoundField DataField="RoomName" HeaderText="Nazwa sali" />
                 <asp:BoundField DataField="Capacity" HeaderText="Pojemność" />
                 <asp:BoundField DataField="Location" HeaderText="Lokalizacja" />
-                
+                <asp:TemplateField HeaderText="Wyposażenie">
+                    <ItemTemplate>
+                        <div class="equipment-badges">
+                            <%# GetEquipmentText(Eval("HasProjector"), Eval("HasWhiteboard"), Eval("HasAudioSystem"), Eval("HasWiFi")) %>
+                        </div>
+                    </ItemTemplate>
+                </asp:TemplateField>
+                <asp:TemplateField HeaderText="Akcja">
+                    <ItemTemplate>
+                        <asp:Button ID="btnBook" runat="server" Text="Zarezerwuj" 
+                            CommandName="BookRoom" 
+                            CommandArgument='<%# Eval("RoomId") %>'
+                            CssClass="book-button btn btn-success" />
+                    </ItemTemplate>
+                </asp:TemplateField>
             </Columns>
         </asp:GridView>
         
