@@ -9,6 +9,16 @@ namespace ConferenceRoomBookingSystem.Pages
     {
         protected void Page_Load(object sender, EventArgs e)
         {
+            if (!IsPostBack)
+            {
+                if (!int.TryParse(Request.QueryString["bookingId"], out int bookingId))
+                {
+                    Response.Redirect("~/Pages/MyBookings.aspx");
+                    return;
+                }
+
+                LoadBookingDetails(bookingId);
+            }
         }
 
         private void LoadBookingDetails(int bookingId)
