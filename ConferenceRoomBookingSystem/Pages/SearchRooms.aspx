@@ -32,7 +32,23 @@
                 </div>
             </div>
             
-            
+            <div class="equipment-section">
+                <span class="equipment-label form-label">Wyposażenie:</span>
+                <div class="equipment-checkboxes">
+                    <div class="equipment-checkbox">
+                        <asp:CheckBox ID="chkProjector" runat="server" Text="Projektor" />
+                    </div>
+                    <div class="equipment-checkbox">
+                        <asp:CheckBox ID="chkWhiteboard" runat="server" Text="Tablica" />
+                    </div>
+                    <div class="equipment-checkbox">
+                        <asp:CheckBox ID="chkAudio" runat="server" Text="System audio" />
+                    </div>
+                    <div class="equipment-checkbox">
+                        <asp:CheckBox ID="chkWifi" runat="server" Text="Wi‑Fi" />
+                    </div>
+                </div>
+            </div>
             
             <asp:Button ID="btnSearch" runat="server" Text="Wyszukaj" 
                 OnClick="btnSearch_Click" CssClass="search-button btn btn-primary" />
