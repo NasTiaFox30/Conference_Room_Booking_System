@@ -43,6 +43,10 @@
                 </div>
             </div>
 
+            <div class="form-group">
+                <label class="form-label">Dział (opcjonalnie):</label>
+                <asp:TextBox ID="txtDepartment" runat="server" CssClass="form-control" />
+            </div>
 
             <asp:Label ID="lblMessage" runat="server" CssClass="alert" Visible="false" />
 
