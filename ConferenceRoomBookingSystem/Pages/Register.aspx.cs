@@ -14,5 +14,11 @@ namespace ConferenceRoomBookingSystem.Pages
         }
         }
 
+        private void ShowMessage(string text, string type)
+        {
+            lblMessage.Text = text;
+            lblMessage.CssClass = $"alert alert-{type}";
+            lblMessage.Visible = true;
+        }
     }
 }
