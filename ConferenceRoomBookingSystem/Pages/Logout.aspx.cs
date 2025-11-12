@@ -16,6 +16,12 @@ namespace ConferenceRoomBookingSystem.Pages
                 // Clear sesion
                 Session.Clear();
                 Session.Abandon();
+
+                // Delete cookies 
+                if (Response.Cookies["ASP.NET_SessionId"] != null)
+                {
+                    Response.Cookies["ASP.NET_SessionId"].Value = string.Empty;
+                    Response.Cookies["ASP.NET_SessionId"].Expires = DateTime.Now.AddMonths(-20);
         }
             catch (Exception)
             {
