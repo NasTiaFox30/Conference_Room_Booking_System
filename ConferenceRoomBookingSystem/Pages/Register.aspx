@@ -19,6 +19,13 @@
                 <asp:RequiredFieldValidator ID="rfvUsername" runat="server" ControlToValidate="txtUsername"
                     ErrorMessage="Pole wymagane" CssClass="validator-error" Display="Dynamic" />
             </div>
+
+            <div class="form-group">
+                <label class="form-label">Email:</label>
+                <asp:TextBox ID="txtEmail" runat="server" TextMode="Email" CssClass="form-control" />
+                <asp:RequiredFieldValidator ID="rfvEmail" runat="server" ControlToValidate="txtEmail"
+                    ErrorMessage="Pole wymagane" CssClass="validator-error" Display="Dynamic" />
+            </div>
         </div>
     </div>
 </asp:Content>
