@@ -23,6 +23,13 @@ namespace ConferenceRoomBookingSystem.Pages
                     Response.Cookies["ASP.NET_SessionId"].Value = string.Empty;
                     Response.Cookies["ASP.NET_SessionId"].Expires = DateTime.Now.AddMonths(-20);
         }
+
+                // Delete authentication cookie
+                if (Response.Cookies[".ASPXAUTH"] != null)
+                {
+                    Response.Cookies[".ASPXAUTH"].Value = string.Empty;
+                    Response.Cookies[".ASPXAUTH"].Expires = DateTime.Now.AddMonths(-20);
+                }
             catch (Exception)
             {
 
