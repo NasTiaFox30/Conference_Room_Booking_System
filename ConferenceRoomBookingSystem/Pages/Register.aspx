@@ -42,6 +42,10 @@
                         ErrorMessage="Wymagane" CssClass="validator-error" Display="Dynamic" />
                 </div>
             </div>
+
+
+            <asp:Label ID="lblMessage" runat="server" CssClass="alert" Visible="false" />
+
         </div>
     </div>
 </asp:Content>
