@@ -1,0 +1,63 @@
+﻿using System;
+using System.Web.UI;
+using ConferenceRoomBookingSystem.Data;
+using ConferenceRoomBookingSystem.Models;
+
+namespace ConferenceRoomBookingSystem.Pages
+{
+    public partial class Register : Page
+    {
+        protected void Page_Load(object sender, EventArgs e)
+        {
+            if (Session["UserId"] != null)
+                Response.Redirect("~/Pages/Default.aspx");
+        }
+
+        protected void btnRegister_Click(object sender, EventArgs e)
+        {
+            if (Page.IsValid)
+            {
+                var repo = new UsersRepository();
+                if (repo.GetUserByUsername(txtUsername.Text.Trim()) != null)
+                {
+                    ShowMessage("Użytkownik o takiej nazwie już istnieje.", "danger");
+                    return;
+                }
+
+                var user = new User
+                {
+                    Username = txtUsername.Text.Trim(),
+                    Email = txtEmail.Text.Trim(),
+                    FirstName = txtFirstName.Text.Trim(),
+                    LastName = txtLastName.Text.Trim(),
+                    Department = txtDepartment.Text.Trim(),
+                    IsAdmin = false,
+                    IsActive = true
+                };
+
+                if (repo.CreateUser(user, txtPassword.Text))
+                {
+                    ShowMessage("Rejestracja udana! Teraz zaloguj się.", "success");
+                    // Auto login
+                    var loggedUser = repo.GetUserByUsername(user.Username);
+                    Session["UserId"] = loggedUser.UserId;
+                    Session["Username"] = loggedUser.Username;
+                    Session["IsAdmin"] = loggedUser.IsAdmin;
+                    Session["FullName"] = loggedUser.FullName;
+                    Response.Redirect("~/Pages/Default.aspx");
+                }
+                else
+                {
+                    ShowMessage("Błąd podczas rejestracji.", "danger");
+                }
+            }
+        }
+
+        private void ShowMessage(string text, string type)
+        {
+            lblMessage.Text = text;
+            lblMessage.CssClass = $"alert alert-{type}";
+            lblMessage.Visible = true;
+        }
+    }
+}
