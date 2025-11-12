@@ -33,6 +33,11 @@
             </div>
 
             <asp:Label ID="lblMessage" runat="server" CssClass="alert alert-danger" Visible="false" />
+
+            <div class="auth-link-container">
+                <asp:HyperLink runat="server" NavigateUrl="~/Pages/Register.aspx" Text="Nie masz konta? Zarejestruj się" CssClass="auth-link" />
+            </div>
+
         </div>
     </div>
 </asp:Content>
