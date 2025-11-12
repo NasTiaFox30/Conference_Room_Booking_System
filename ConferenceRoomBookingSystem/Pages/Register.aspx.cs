@@ -23,7 +23,7 @@ namespace ConferenceRoomBookingSystem.Pages
                     ShowMessage("Użytkownik o takiej nazwie już istnieje.", "danger");
                     return;
                 }
-                
+
                 var user = new User
                 {
                     Username = txtUsername.Text.Trim(),

@@ -11,7 +11,7 @@
         <div class="auth-header">
             <h2 class="auth-title">Rejestracja nowego użytkownika</h2>
         </div>
-    
+
         <div class="auth-form">
             <div class="form-group">
                 <label class="form-label">Login:</label>
@@ -33,7 +33,7 @@
                     <asp:TextBox ID="txtFirstName" runat="server" CssClass="form-control" />
                     <asp:RequiredFieldValidator ID="rfvFirstName" runat="server" ControlToValidate="txtFirstName"
                         ErrorMessage="Wymagane" CssClass="validator-error" Display="Dynamic" />
-            </div>
+                </div>
 
                 <div class="form-group">
                     <label class="form-label">Nazwisko:</label>
@@ -63,7 +63,7 @@
 
             <div class="auth-link-container">
                 <asp:HyperLink runat="server" NavigateUrl="~/Login.aspx" Text="Masz już konto? Zaloguj się" CssClass="auth-link" />
+            </div>
         </div>
-    </div>
     </div>
 </asp:Content>
