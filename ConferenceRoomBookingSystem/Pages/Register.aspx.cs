@@ -12,6 +12,9 @@ namespace ConferenceRoomBookingSystem.Pages
             if (Session["UserId"] != null)
                 Response.Redirect("~/Pages/Default.aspx");
         }
+
+        protected void btnRegister_Click(object sender, EventArgs e)
+        {
         }
 
         private void ShowMessage(string text, string type)
