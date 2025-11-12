@@ -270,6 +270,8 @@
                     <asp:HyperLink runat="server" NavigateUrl="~/Pages/Register.aspx" Text="Zarejestruj się" CssClass="navbar-link" />
                 </div>
             </asp:PlaceHolder>
+
+            <asp:HyperLink runat="server" NavigateUrl="~/Admin/Rooms.aspx" Text="Administration" Visible="false" ID="AdminLink" CssClass="navbar-link" />
         </div>
 
         <div class="container">
