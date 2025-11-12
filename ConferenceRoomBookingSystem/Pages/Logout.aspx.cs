@@ -13,6 +13,9 @@ namespace ConferenceRoomBookingSystem.Pages
         {
             try
             {
+                // Clear sesion
+                Session.Clear();
+                Session.Abandon();
         }
             catch (Exception)
             {
