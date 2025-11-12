@@ -15,6 +15,11 @@ namespace ConferenceRoomBookingSystem.Pages
 
         protected void btnRegister_Click(object sender, EventArgs e)
         {
+            if (Page.IsValid)
+            {
+                var repo = new UsersRepository();
+                
+            }
         }
 
         private void ShowMessage(string text, string type)
