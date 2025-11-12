@@ -35,9 +35,12 @@ namespace ConferenceRoomBookingSystem.Pages
                 Response.Cache.SetCacheability(HttpCacheability.NoCache);
                 Response.Cache.SetExpires(DateTime.UtcNow.AddHours(-1));
                 Response.Cache.SetNoStore();
+
+                Response.Redirect("~/Pages/Login.aspx", true);
+            }
             catch (Exception)
             {
-
+                Response.Redirect("~/Pages/Login.aspx");
     }
 }
     }
