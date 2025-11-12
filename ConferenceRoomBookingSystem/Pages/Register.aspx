@@ -61,6 +61,9 @@
 
             <asp:Label ID="lblMessage" runat="server" CssClass="alert" Visible="false" />
 
+            <div class="auth-link-container">
+                <asp:HyperLink runat="server" NavigateUrl="~/Login.aspx" Text="Masz już konto? Zaloguj się" CssClass="auth-link" />
         </div>
+    </div>
     </div>
 </asp:Content>
