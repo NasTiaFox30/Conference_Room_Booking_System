@@ -251,6 +251,11 @@
 <body>
     <form runat="server">
         <div class="navbar">
+            <div class="navbar-links">
+                <asp:HyperLink runat="server" NavigateUrl="~/Pages/Default.aspx" Text="Główna" CssClass="navbar-link" />
+                <asp:HyperLink runat="server" NavigateUrl="~/Pages/SearchRooms.aspx" Text="Search room" CssClass="navbar-link" />
+                <asp:HyperLink runat="server" NavigateUrl="~/Pages/MyBookings.aspx" Text="My bookings" CssClass="navbar-link" />
+            </div>
    
         </div>
 
