@@ -34,6 +34,22 @@ namespace ConferenceRoomBookingSystem.Pages
                     IsAdmin = false,
                     IsActive = true
                 };
+
+                if (repo.CreateUser(user, txtPassword.Text))
+                {
+                    ShowMessage("Rejestracja udana! Teraz zaloguj się.", "success");
+                    // Auto login
+                    var loggedUser = repo.GetUserByUsername(user.Username);
+                    Session["UserId"] = loggedUser.UserId;
+                    Session["Username"] = loggedUser.Username;
+                    Session["IsAdmin"] = loggedUser.IsAdmin;
+                    Session["FullName"] = loggedUser.FullName;
+                    Response.Redirect("~/Pages/Default.aspx");
+                }
+                else
+                {
+                    ShowMessage("Błąd podczas rejestracji.", "danger");
+                }
             }
         }
 
