@@ -4,6 +4,10 @@
     padding: 2rem;
 }
 
+.bookroom-header {
+    margin-bottom: 2rem;
+    text-align: center;
+}
 
 .bookroom-buttons {
     display: flex;
