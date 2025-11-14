@@ -16,3 +16,10 @@
     font-weight: 600;
     margin-bottom: 0.5rem;
 }
+.booking-actions {
+    margin-top: 2rem;
+    display: flex;
+    gap: 1rem;
+    justify-content: center;
+    flex-wrap: wrap;
+}
