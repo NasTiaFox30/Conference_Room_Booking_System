@@ -28,6 +28,34 @@
         font-size: 1rem;
         background-color: white;
     }
+
+.bookings-table {
+    width: 100%;
+    border-collapse: collapse;
+    background-color: white;
+    box-shadow: var(--shadow);
+    border-radius: 8px;
+    overflow: hidden;
+}
+
+    .bookings-table th {
+        background-color: var(--light-color);
+        padding: 1rem;
+        text-align: left;
+        font-weight: 600;
+        color: var(--text-color);
+        border-bottom: 2px solid var(--border-color);
+    }
+
+    .bookings-table td {
+        padding: 1rem;
+        border-bottom: 1px solid var(--border-color);
+    }
+
+    .bookings-table tr:hover {
+        background-color: #f9f9f9;
+    }
+
 .action-buttons {
     display: flex;
     gap: 0.5rem;
