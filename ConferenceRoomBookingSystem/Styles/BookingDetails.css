@@ -4,3 +4,15 @@
     padding: 2rem 1rem;
     min-height: calc(100vh - 140px);
 }
+
+.booking-details-header {
+    margin-bottom: 2rem;
+    text-align: center;
+}
+
+.booking-details-title {
+    color: var(--text-color);
+    font-size: 1.8rem;
+    font-weight: 600;
+    margin-bottom: 0.5rem;
+}
