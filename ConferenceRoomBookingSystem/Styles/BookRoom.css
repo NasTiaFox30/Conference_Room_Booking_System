@@ -3,3 +3,17 @@
     margin: 0 auto;
     padding: 2rem;
 }
+
+
+.bookroom-buttons {
+    display: flex;
+    gap: 1rem;
+    margin-top: 2rem;
+    flex-wrap: wrap;
+}
+
+.bookroom-btn {
+    flex: 1;
+    min-width: 200px;
+    padding: 0.875rem 2rem;
+}
