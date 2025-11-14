@@ -86,6 +86,13 @@
     border-radius: 8px;
     box-shadow: var(--shadow);
 }
+
+.time-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1rem;
+}
+
 .bookroom-buttons {
     display: flex;
     gap: 1rem;
