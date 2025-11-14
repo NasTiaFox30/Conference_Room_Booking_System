@@ -20,6 +20,9 @@
     margin-bottom: 0.5rem;
 }
 
+.auth-form {
+    width: 100%;
+}
 .auth-link {
     color: var(--accent-color);
     text-decoration: none;
