@@ -23,6 +23,13 @@
     margin-bottom: 2rem;
     box-shadow: var(--shadow);
 }
+
+.search-filters-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 1rem;
+    margin-bottom: 1.5rem;
+}
 .no-rooms-message {
     padding: 2rem;
     background-color: #fff3cd;
