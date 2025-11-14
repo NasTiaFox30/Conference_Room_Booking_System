@@ -23,6 +23,11 @@
 .auth-form {
     width: 100%;
 }
+
+.auth-button-container {
+    text-align: center;
+    margin: 2rem 0;
+}
 .auth-link {
     color: var(--accent-color);
     text-decoration: none;
