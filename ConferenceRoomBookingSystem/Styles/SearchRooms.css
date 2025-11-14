@@ -15,6 +15,14 @@
     font-weight: 600;
     margin-bottom: 0.5rem;
 }
+
+.search-form {
+    background: var(--light-color);
+    padding: 2rem;
+    border-radius: 8px;
+    margin-bottom: 2rem;
+    box-shadow: var(--shadow);
+}
 .no-rooms-message {
     padding: 2rem;
     background-color: #fff3cd;
